@@ -25,7 +25,8 @@ Released under the MIT license.
 
 ## How to Configure
 
-View the docs for a detailed breakdown.
+
+View the (docs)[] for more details.
 
 ### Boilerplate
 
