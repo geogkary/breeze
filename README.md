@@ -76,13 +76,11 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 #### Using libraries:
 
-If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory. By default, Breeze autoloads PHP classes located in that directory.
-
-Use subdirectories or edit Breeze's `config.php` file.
+If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory.
 
 #### Protecting your subdirectories:
 
-Breeze provides the `engine/endpointer.php` file, which serves a generic 404 response to requests. You can optionally require that file to protect your API's subdirectories.
+Breeze provides the `engine/endpointer.php` file, which serves a generic 404 response to requests. You can optionally require it in index.php files, to protect your API's subdirectories.
 
 ## Thanks
 
