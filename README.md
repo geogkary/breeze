@@ -33,11 +33,13 @@ git clone https://github.com/mikecao/flight.git
 
 ### Composer
 
-Require the package and autoloader:
+Require the package:
 
 ```cmd
 composer require geogkary/breeze
 ```
+
+Load Breeze:
 
 ```php
 // autoload
