@@ -3,30 +3,23 @@
 class API
 {
 
-    public static $active = true;
+    public static $endpoints = array(
+        'info' => array(
+            'releases' => 'info/releases(/@release)/'
+        )
+    );
+
+    public static $data = array();
+
+    public static $query = array(
+        'test'
+    );
 
     public static $keys = array();
 
-    public static $endpoints = array();
-
-    public static $errors = array(
-        '400' => 'Bad request - missing required parameter(s)',
-        '401' => 'Bad request - incorrect parameter(s)',
-        '402' => 'Empty response - failed to deliver based on request parameter(s)',
-        '403' => 'Forbidden - unauthorized access',
-        '404' => 'Not found - incorrect endpoint provided',
-        '500' => 'Server - something went wrong'
-    );
-
-    public static $db = array();
-
-    /**
-    * @method
-    */
-
-    public function __construct()
+    public static function routeInfo_Releases($request, $p1)
     {
-        var_dump(1); die;
+        var_dump($request, $p1);
     }
 
 }
