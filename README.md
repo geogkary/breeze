@@ -65,9 +65,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
 ```
 
-- Create a subdirectory `versions/` in your project's root directory
-- Download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
-- Edit `config.php` located in Breeze's root directory
+1. Create a subdirectory `versions/` in your project's root directory
+2. Download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
+3. Edit `config.php` located in Breeze's root directory
 
 ## How to Configure
 
