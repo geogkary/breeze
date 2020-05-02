@@ -2,7 +2,7 @@
 
 /*!
 * Breeze PHP
-* A simple PHP framework for building APIs.
+* Build JSON APIs with the Breeze framework for PHP.
 * https://breezephp.com/
 */
 
