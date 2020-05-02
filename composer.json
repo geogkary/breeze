@@ -7,7 +7,7 @@
     "authors" : [
         {
             "name" : "George Kary",
-            "email" : "info@breezephp.com",
+            "email" : "phpbreeze@gmail.com",
             "homepage" : "http://georgekary.com/",
             "role" : "Creator"
         }
@@ -22,7 +22,7 @@
     },
     "autoload" : {
         "files" : [
-            "autoload.php"
+            "composer.php"
         ]
     }
 }

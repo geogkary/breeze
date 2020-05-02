@@ -1,6 +1,6 @@
-# Breeze
+# Breeze PHP
 
-Use Breeze to quickly and easily build JSON-based APIs with PHP.
+Use Breeze to quickly and easily build JSON based APIs with PHP.
 
 Released under the MIT license.
 
