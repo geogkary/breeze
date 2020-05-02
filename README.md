@@ -6,8 +6,7 @@ Requires PHP 5.5 or greater.
 
 - [Install](https://github.com/geogkary/breeze/tree/dev#how-to-install)
 - [Start](https://github.com/geogkary/breeze/tree/dev#how-to-start)
-- [Configure](https://github.com/geogkary/breeze/tree/dev#how-to-configure)
-- [Contribute](https://github.com/geogkary/breeze/tree/dev#how-to-contribute)
+- [Docs](https://github.com/geogkary/breeze/tree/dev#how-to-configure)
 
 Released under the [MIT license](https://github.com/geogkary/breeze/blob/dev/LICENSE.md).
 
@@ -90,4 +89,10 @@ Breeze provides the `engine/endpointer.php` file, which serves a generic 404 res
 - Create an `index.php` file
 - Require `{PATH_TO}/engine/endpointer.php`
 
-## How to Contribute
+## Thanks
+
+- [mikecao](https://github.com/mikecao) for the Flight framework
+- [GitHub API](https://developer.github.com/v3/) for the immense inspiration on structuring RESTful APIs
+- [Valandis Zotos](https://github.com/BalzoT) for his invaluable feedback and help
+
+Create static websites with [Webmart PHP](https://github.com/geogkary/webmart).
