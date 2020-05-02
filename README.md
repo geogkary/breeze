@@ -6,7 +6,11 @@ Released under the MIT license.
 
 ### Required
 
+- mikecao/flight
+
 ### Suggested
+
+- catfan/Medoo
 
 ## How to Install
 
