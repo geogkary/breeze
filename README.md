@@ -12,7 +12,7 @@ Released under the MIT license.
 
 - catfan/Medoo
 
-## Install
+## How to Install
 
 ### Manual
 
@@ -23,7 +23,7 @@ Released under the MIT license.
 
 ### Composer
 
-## Configure
+## How to Configure
 
 View the [docs](https://breezephp.com/docs) for more details.
 
@@ -37,4 +37,4 @@ View the [docs](https://breezephp.com/docs) for more details.
 
 Breeze provides an `unrouter.php` file which allows you to respond to requests for subdirectories in a more API like manner, disabling access to your subdirectories.
 
-## Contribute
+## How to Contribute
