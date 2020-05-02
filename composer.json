@@ -1,7 +1,7 @@
 {
     "name" : "geogkary/breeze",
     "version" : "v1.0.0-alpha",
-    "description" : "Build JSON APIs with Breeze PHP.",
+    "description" : "Use Breeze to quickly and easily build JSON APIs with PHP. A lightweight framework built on top of mikecao/flight.",
     "homepage" : "https://breezephp.com",
     "license" : "MIT",
     "authors" : [
