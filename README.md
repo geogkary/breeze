@@ -12,7 +12,7 @@ Released under the MIT license.
 
 - catfan/Medoo
 
-## How to Install
+## Install
 
 ### Manual
 
@@ -23,7 +23,7 @@ Released under the MIT license.
 
 ### Composer
 
-## How to Configure
+## Configure
 
 View the [docs](https://breezephp.com/docs) for more details.
 
@@ -31,8 +31,10 @@ View the [docs](https://breezephp.com/docs) for more details.
 
 - Edit your setup with `config.php`, located in Breeze's root directory.
 - Feel free to download the [boilerplate](https://github.com/geogkary/breeze/archive/boilerplate.zip) API version to get started
-- If you're doing it manually, you can optionally load more libraries in the `engine/libraries/` directory
+- If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory
 
-#### Protecting your subdirectories
+#### Protecting your subdirectories:
 
 Breeze provides an `unrouter.php` file which allows you to respond to requests for subdirectories in a more API like manner, disabling access to your subdirectories.
+
+## Contribute
