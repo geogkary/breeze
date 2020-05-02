@@ -14,7 +14,7 @@ Released under the MIT license.
 
 ## How to Install
 
-### Manual
+### Manually
 
 Download [Breeze](https://github.com/geogkary/breeze/archive/master.zip) OR clone the repo in your root directory:
 
@@ -28,11 +28,11 @@ Download [mikecao/flight](...) OR clone the repo:
 git clone https://github.com/geogkary/breeze.git
 ```
 
-Create a subdirectory `versions/` in your project's root directory.
+Get started:
 
-Feel free to download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly.
-
-Edit your setup with `config.php`, located in Breeze's root directory.
+- Create a subdirectory `versions/` in your project's root directory
+- Download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
+- Edit `config.php`, located in Breeze's root directory
 
 ### Composer
 
