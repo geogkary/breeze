@@ -24,3 +24,9 @@ Released under the MIT license.
 ### Composer
 
 ## How to Configure
+
+View the docs for a detailed breakdown.
+
+### Unrouter
+
+Breeze provides an `unrouter.php` file which allows you to respond to requests for subdirectories in a more API like manner, disabling access to your subdirectories.
