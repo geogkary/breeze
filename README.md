@@ -29,9 +29,9 @@ View the [docs](https://breezephp.com/docs) for more details.
 
 #### A few things to consider:
 
-- Edit your setup with `config.php`, located in Breeze's root directory.
+- Edit your setup with `config.php`, located in Breeze's root directory
 - Feel free to download the [boilerplate](https://github.com/geogkary/breeze/archive/boilerplate.zip) API version to get started
-- If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory
+- If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory. By default, Breeze autoloads PHP classes located in the directory. Use subdirectories if you don't want that behavior (ex. `libraries/db/Medoo.php`).
 
 #### Protecting your subdirectories:
 
