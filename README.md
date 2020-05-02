@@ -8,7 +8,7 @@ Requires PHP 5.5 or greater.
 - [Start](https://github.com/geogkary/breeze/tree/dev#how-to-start)
 - [Docs](https://github.com/geogkary/breeze/tree/dev#how-to-configure)
 
-Released under the [MIT license](https://github.com/geogkary/breeze/blob/dev/LICENSE.md).
+Released under the [MIT License](https://github.com/geogkary/breeze/blob/dev/LICENSE.md).
 
 ## How to Install
 
@@ -95,6 +95,7 @@ Breeze provides the `engine/endpointer.php` file, which serves a generic 404 res
 - [GitHub API](https://developer.github.com/v3/) for the immense inspiration on structuring RESTful APIs
 - [Valandis Zotos](https://github.com/BalzoT) for his invaluable feedback and help
 - [Angel Lai](https://github.com/catfan) for the Medoo framework
+- [Dongsheng Cai](https://github.com/dcai) for the curl library
 - [Kaldi](https://en.wikipedia.org/wiki/Coffee) (or the goats?) for discovering coffee
 
 Create static websites with [Webmart PHP](https://github.com/geogkary/webmart).
