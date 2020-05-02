@@ -2,7 +2,7 @@
 
 Use Breeze to quickly setup and start building JSON APIs with PHP.
 
-Requires PHP 5.5 or greater.
+Requires PHP 5.6 or greater.
 
 - [Install](https://github.com/geogkary/breeze/tree/dev#how-to-install)
 - [Start](https://github.com/geogkary/breeze/tree/dev#how-to-start)
