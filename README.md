@@ -31,7 +31,7 @@ cd engine/libraries/
 git clone https://github.com/mikecao/flight.git
 ```
 
-Load and run Breeze in your root `index.php` file:
+Run Breeze in your root `index.php` file:
 
 ```php
 require 'engine/Breeze.php';
@@ -40,13 +40,11 @@ Breeze::init();
 
 ### Composer
 
-Require the package:
+Require and load the package:
 
 ```cmd
 composer require geogkary/breeze
 ```
-
-Load Breeze:
 
 ```php
 // autoload
