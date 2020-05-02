@@ -91,8 +91,10 @@ Breeze provides the `engine/endpointer.php` file, which serves a generic 404 res
 
 ## Thanks
 
-- [mikecao](https://github.com/mikecao) for the Flight framework
+- [Mike Cao](https://github.com/mikecao) for the Flight framework
 - [GitHub API](https://developer.github.com/v3/) for the immense inspiration on structuring RESTful APIs
 - [Valandis Zotos](https://github.com/BalzoT) for his invaluable feedback and help
+- [Angel Lai](https://github.com/catfan) for the Medoo framework
+- [Kaldi](https://en.wikipedia.org/wiki/Coffee) (or the goats?) for discovering coffee
 
 Create static websites with [Webmart PHP](https://github.com/geogkary/webmart).
