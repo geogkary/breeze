@@ -25,8 +25,9 @@ Released under the MIT license.
 
 ## How to Configure
 
+Adjust your settings with `config.php`, located in Breeze's root directory.
 
-View the (docs)[] for more details.
+View the [docs](https://breezephp.com/docs) for more details.
 
 ### Boilerplate
 
