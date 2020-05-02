@@ -2,6 +2,11 @@
 
 Use Breeze to quickly and easily build JSON based APIs with PHP.
 
+- [Install](https://github.com/geogkary/breeze/tree/dev#how-to-install)
+- [Start](https://github.com/geogkary/breeze/tree/dev#how-to-start)
+- [Configure](https://github.com/geogkary/breeze/tree/dev#how-to-configure)
+- [Contribute](https://github.com/geogkary/breeze/tree/dev#how-to-contribute)
+
 Released under the MIT license.
 
 ### Required
