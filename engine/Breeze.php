@@ -7,6 +7,10 @@ class Breeze
 
     public static $errors;
 
+    public static $db;
+
+    public static $http;
+
     /**
     * @method
     */
@@ -172,6 +176,10 @@ class Breeze
                     return self::respond('404');
                 }
 
+                if (method_exists('API', 'init')) {
+                    API::init();
+                }
+
                 // check if endpoint home
 
                 $method = 'route' . ucfirst(str_replace('-', '_', $endpoint));
@@ -246,6 +254,55 @@ class Breeze
         ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
         return;
+    }
+
+    /**
+    * @method
+    */
+
+    public static function db($settings = array())
+    {
+        // if (self::$db) return self::$db;
+        //
+        // if (!class_exists('Medoo')) {
+        //     if (!file_exists('engine/libraries/Medoo.php')) {
+        //         return null;
+        //     }
+        //
+        //     require_once 'engine/libraries/Medoo.php';
+        //     self::$db = new Medoo\Medoo;
+        //
+        //     return self::$db;
+        // }
+    }
+
+    /**
+    * @method
+    */
+
+    public static function http($post)
+    {
+        // if (self::$http) {
+        //
+        // }
+        //
+        //
+        //
+        //
+        // if (!self::$http) self::$http = new dcai\curl();
+        //
+        // if ($post && !empty($post)) {
+        //     $post['key'] = Config::$key;
+        //     $response = json_decode(self::$http->post(Config::$api . $endpoint, $post), true);
+        // } else {
+        //     $response = json_decode(self::$http->get(Config::$api . $endpoint), true);
+        // }
+        //
+        // if (isset($response['status'])) {
+        //     var_dump('api-request: ' . $endpoint, $response); die;
+        // }
+        //
+        // return $response;
     }
 
 }
