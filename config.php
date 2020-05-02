@@ -2,18 +2,25 @@
 
 /*!
 * Breeze PHP
-* A simple PHP framework for building APIs.
+* Build JSON APIs with the Breeze framework for PHP.
 * https://breezephp.com/
 */
 
+// prefix used for listing your endpoints
 define('BZ_ROOT', 'https://breezephp.com/');
+
+// enable listing of endpoints in versions/endpoints home
 define('BZ_LIST_ENDPOINTS', true);
+
+// disable debugging for production
 define('BZ_DEBUG', true);
 
+// list available and active (aka public) versions
 $bz_versions = array(
     'boilerplate' => true
 );
 
+// list of required errors for the system
 $bz_errors = array(
     '200' => 'OK',
     '400' => 'Bad request - missing required parameter(s)',
