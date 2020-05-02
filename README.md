@@ -86,9 +86,6 @@ Use subdirectories if you don't want that behavior (ex. `libraries/db/Medoo.php`
 
 Breeze provides the `engine/endpointer.php` file, which serves a generic 404 response to requests. You can optionally require that file to protect your API's subdirectories.
 
-- Create an `index.php` file
-- Require `{PATH_TO}/engine/endpointer.php`
-
 ## Thanks
 
 - [Mike Cao](https://github.com/mikecao) for the Flight framework
