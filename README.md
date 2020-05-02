@@ -44,7 +44,7 @@ composer require geogkary/breeze
 require 'vendor/autoload.php';
 
 // manually
-require 'vendor/geogkary/breeze/index.php';
+require 'vendor/geogkary/breeze/engine/composer.php';
 ```
 
 ## How to Start
