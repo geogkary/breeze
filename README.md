@@ -16,6 +16,12 @@ Released under the MIT license.
 
 ### Manual
 
+Download [Breeze](https://github.com/geogkary/breeze/archive/master.zip) or clone this repo:
+
+```cmd
+git clone https://github.com/geogkary/breeze.git
+```
+
 1. Download Breeze and unzip in your root directory
 2. Download Flight and unzip inside `breeze/libraries/`
 3. Download Medoo and unzip inside `breeze/libraries/`
