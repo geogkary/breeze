@@ -6,5 +6,5 @@
 * https://breezephp.com/
 */
 
-require 'Breeze.php';
+require 'engine/Breeze.php';
 Breeze::init();
