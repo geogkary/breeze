@@ -6,5 +6,6 @@
 * https://breezephp.com/
 */
 
+define('BZ_VERSION', 'boilerplate');
 define('BZ_LIST_ENDPOINTS', true);
 define('BZ_DEBUG', false);
