@@ -23,10 +23,10 @@ Download [Breeze](https://github.com/geogkary/breeze/archive/master.zip) OR clon
 git clone https://github.com/geogkary/breeze.git
 ```
 
-Download [Flight](...) OR clone the repo inside `engine/libraries/`:
+Download [Flight](...) OR clone the repo inside `engine/flight/`:
 
 ```cmd
-cd engine/libraries/
+cd engine/flight/
 git clone https://github.com/mikecao/flight.git
 ```
 
