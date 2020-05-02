@@ -14,6 +14,8 @@ Released under the MIT license.
 
 ## How to Install
 
+See available versions on [GitHub](...) / [Packagist](...).
+
 ### Manually
 
 Download [Breeze](https://github.com/geogkary/breeze/archive/master.zip) OR clone the repo in your project's root directory:
@@ -29,13 +31,25 @@ cd engine/libraries/
 git clone https://github.com/mikecao/flight.git
 ```
 
-Get started:
+### Composer
+
+Require the package in your project's root directory:
+
+```cmd
+composer require geogkary/breeze
+```
+
+Create a `index.php` file and require the autoloader:
+
+```php
+require 'vendor/autoload.php';
+```
+
+## How to Start
 
 - Create a subdirectory `versions/` in your project's root directory
 - Download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
-- Edit `config.php`, located in Breeze's root directory
-
-### Composer
+- Edit `config.php` located in Breeze's root directory
 
 ## How to Configure
 
