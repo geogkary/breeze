@@ -1,5 +1,11 @@
 <?php
 
+/*!
+* Breeze PHP
+* A simple PHP framework for building APIs.
+* https://breezephp.com/
+*/
+
 header('Content-Type: application/json');
 
 if (!class_exists('Flight') && file_exists('libraries/flight/Flight.php')) {
