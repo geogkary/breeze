@@ -27,12 +27,12 @@ Released under the MIT license.
 
 View the [docs](https://breezephp.com/docs) for more details.
 
-#### A few things to consider:
+#### Get started:
 
 - Edit your setup with `config.php`, located in Breeze's root directory
 - Feel free to download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
 
-#### Loading libraries:
+#### Using libraries:
 
 If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory. By default, Breeze autoloads PHP classes located in that directory.
 
