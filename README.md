@@ -16,16 +16,17 @@ Released under the MIT license.
 
 ### Manually
 
-Download [Breeze](https://github.com/geogkary/breeze/archive/master.zip) OR clone the repo in your root directory:
+Download [Breeze](https://github.com/geogkary/breeze/archive/master.zip) OR clone the repo in your project's root directory:
 
 ```cmd
 git clone https://github.com/geogkary/breeze.git
 ```
 
-Download [mikecao/flight](...) OR clone the repo:
+Download [mikecao/flight](...) OR clone the repo inside `engine/libraries/`:
 
 ```cmd
-git clone https://github.com/geogkary/breeze.git
+cd engine/libraries/
+git clone https://github.com/mikecao/flight.git
 ```
 
 Get started:
