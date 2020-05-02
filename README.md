@@ -12,7 +12,7 @@ Released under the [MIT License](https://github.com/geogkary/breeze/blob/dev/LIC
 
 ## How to Install
 
-See available versions on [GitHub](...) / [Packagist](...).
+See available versions on [GitHub](https://github.com/geogkary/breeze/releases) / [Packagist](https://packagist.org/packages/geogkary/breeze).
 
 ### Manually
 
@@ -22,7 +22,7 @@ Download [Breeze](https://github.com/geogkary/breeze/archive/master.zip) OR clon
 git clone https://github.com/geogkary/breeze.git
 ```
 
-Download [Flight](...) OR clone the repo inside `engine/flight/`:
+Download [Flight](https://github.com/mikecao/flight/archive/master.zip) OR clone the repo inside `engine/flight/`:
 
 ```cmd
 cd engine/flight/
