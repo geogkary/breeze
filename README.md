@@ -25,14 +25,14 @@ Released under the MIT license.
 
 ## How to Configure
 
-Adjust your settings with `config.php`, located in Breeze's root directory.
-
 View the [docs](https://breezephp.com/docs) for more details.
 
-### Boilerplate
+#### A few things to consider:
 
-### Libraries
+- Edit your setup with `config.php`, located in Breeze's root directory.
+- Feel free to download the [boilerplate](https://github.com/geogkary/breeze/archive/boilerplate.zip) API version to get started
+- If you're doing it manually, you can optionally load more libraries in the `engine/libraries/` directory
 
-### Unrouter
+#### Protecting your subdirectories
 
 Breeze provides an `unrouter.php` file which allows you to respond to requests for subdirectories in a more API like manner, disabling access to your subdirectories.
