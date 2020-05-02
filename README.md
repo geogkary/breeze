@@ -64,9 +64,7 @@ View the [docs](https://breezephp.com/docs) for more details.
 
 #### Setting up routing:
 
-Breeze is built on top of Flight, which requires URL rewriting.
-
-Here's a quick .htaccess to copy:
+Breeze is built on top of Flight, which requires URL rewriting. Here's a quick .htaccess to copy:
 
 ```
 RewriteEngine On
