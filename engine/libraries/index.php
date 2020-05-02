@@ -6,4 +6,4 @@
 * https://breezephp.com/
 */
 
-require '../index.php';
+require '../endpointer.php';

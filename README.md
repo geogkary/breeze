@@ -30,7 +30,7 @@ View the [docs](https://breezephp.com/docs) for more details.
 #### A few things to consider:
 
 - Edit your setup with `config.php`, located in Breeze's root directory
-- Feel free to download the [boilerplate](https://github.com/geogkary/breeze/archive/boilerplate.zip) API version to get started
+- Feel free to download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
 
 #### Loading libraries:
 
@@ -40,6 +40,9 @@ Use subdirectories if you don't want that behavior (ex. `libraries/db/Medoo.php`
 
 #### Protecting your subdirectories:
 
-Breeze provides an `unrouter.php` file which allows you to respond to requests for subdirectories in a more API like manner, disabling access to your subdirectories.
+Breeze provides the `engine/endpointer.php` file, which serves a generic 404 response to requests. You can optionally require that file to protect your API's subdirectories.
+
+- Create an `index.php` file
+- Write `require 'engine/endpointer.php'` with the appropriate "../" preceding 
 
 ## How to Contribute
