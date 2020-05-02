@@ -22,7 +22,7 @@
     },
     "autoload" : {
         "files" : [
-            "composer.php"
+            "engine/composer.php"
         ]
     }
 }
