@@ -9,7 +9,7 @@
 // prefix used for listing your endpoints
 define('BZ_ROOT', 'https://breezephp.com/');
 
-// enable listing of endpoints in versions/endpoints home
+// enable listing of endpoints in home requests of versions and endpoints
 define('BZ_LIST_ENDPOINTS', true);
 
 // disable debugging for production
@@ -20,7 +20,7 @@ $bz_versions = array(
     'boilerplate' => true
 );
 
-// list of required errors for the system
+// list of errors for your API
 $bz_errors = array(
     '200' => 'OK',
     '400' => 'Bad request - missing required parameter(s)',
