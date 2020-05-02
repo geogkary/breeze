@@ -11,9 +11,58 @@ class Breeze
 
     public static function init()
     {
-        if (self::$init == true) return;
-
         header('Content-Type: application/json');
+
+        if (self::$init == true) return;
+        
+        if (!class_exists('Flight')) {
+            if (!file_exists('engine/flight/flight/Flight.php')) {
+                return self::respond(array(
+                    'status' => '500',
+                    'message' => 'Bad configuration - flight framework not detected'
+                ));
+            }
+
+            require 'engine/flight/flight/Flight.php';
+        }
+
+        // 404 requests
+
+        Flight::map('notFound', function() {
+            return self::respond('404');
+        });
+
+        // Bad requests
+
+        Flight::map('error', function(Exception $error) {
+            if (defined('BZ_DEBUG') && BZ_DEBUG === true) {
+                return self::respond(array(
+                    'status' => '500',
+                    'message' => $error->getTraceAsString()
+                ));
+            }
+
+            return self::respond('500');
+        });
+
+        // Home requests
+
+        Flight::route('/', function() {
+            $versions = scandir('versions');
+
+            array_shift($versions);
+            array_shift($versions);
+
+            var_dump($versions); die;
+
+            return self::respond($versions);
+        });
+
+        // Version requests
+
+        // POST requests
+
+        // GET requests
 
 
         self::$init = true;
@@ -38,10 +87,10 @@ class Breeze
             return;
         }
 
-        if (isset(self::$errors[$data])) {
+        if (isset($bz_errors[$data])) {
             echo json_encode(array(
                 'status' => $data,
-                'message' => self::$errors[$data]
+                'message' => $bz_errors[$data]
             ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
             return;
@@ -49,7 +98,7 @@ class Breeze
 
         echo json_encode(array(
             'status' => '500',
-            'message' => self::$errors['500']
+            'message' => $bz_errors['500']
         ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
         return;
