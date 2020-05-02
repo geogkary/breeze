@@ -1,6 +1,6 @@
 # Breeze PHP
 
-Use Breeze to quickly and easily build JSON APIs with PHP.
+Use Breeze to quickly setup and start building JSON APIs with PHP.
 
 Requires PHP 5.5 or greater.
 
