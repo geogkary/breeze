@@ -27,7 +27,7 @@ Released under the MIT license.
 
 View the [docs](https://breezephp.com/docs) for more details.
 
-#### Get started:
+#### Getting started:
 
 - Edit your setup with `config.php`, located in Breeze's root directory
 - Feel free to download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
