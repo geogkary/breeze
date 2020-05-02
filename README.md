@@ -93,4 +93,4 @@ Breeze provides the `engine/endpointer.php` file, which serves a generic 404 res
 - [Dongsheng Cai](https://github.com/dcai) for the curl library
 - [Kaldi](https://en.wikipedia.org/wiki/Coffee) (or the goats?) for discovering coffee
 
-Create static websites with [Webmart PHP](https://github.com/geogkary/webmart).
+Create static websites with the [Webmart framework](https://github.com/geogkary/webmart) for PHP.
