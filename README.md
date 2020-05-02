@@ -33,13 +33,11 @@ git clone https://github.com/mikecao/flight.git
 
 ### Composer
 
-Require the package in your project's root directory:
+Require the package and autoloader:
 
 ```cmd
 composer require geogkary/breeze
 ```
-
-Create a `index.php` file and require the autoloader:
 
 ```php
 require 'vendor/autoload.php';
