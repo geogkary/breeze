@@ -7,10 +7,6 @@ class Breeze
 
     public static $errors;
 
-    public static $db;
-
-    public static $http;
-
     /**
     * @method
     */
