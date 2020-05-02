@@ -34,7 +34,7 @@ View the [docs](https://breezephp.com/docs) for more details.
 
 #### Loading libraries:
 
-If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory. By default, Breeze autoloads PHP classes located in the directory.
+If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory. By default, Breeze autoloads PHP classes located in that directory.
 
 Use subdirectories if you don't want that behavior (ex. `libraries/db/Medoo.php`).
 
