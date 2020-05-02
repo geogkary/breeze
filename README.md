@@ -56,6 +56,16 @@ require 'vendor/geogkary/breeze/engine/composer.php';
 
 ## How to Start
 
+You'll need an .htaccess file (requires MOD_REWRITE):
+
+```
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+```
+
 - Create a subdirectory `versions/` in your project's root directory
 - Download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
 - Edit `config.php` located in Breeze's root directory
