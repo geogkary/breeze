@@ -40,8 +40,11 @@ composer require geogkary/breeze
 ```
 
 ```php
-// in your project's root index.php file
+// autoload
 require 'vendor/autoload.php';
+
+// manually
+require 'vendor/geogkary/breeze/index.php';
 ```
 
 ## How to Start
