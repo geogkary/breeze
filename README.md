@@ -40,6 +40,7 @@ composer require geogkary/breeze
 ```
 
 ```php
+// in your project's root index.php file
 require 'vendor/autoload.php';
 ```
 
