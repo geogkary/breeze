@@ -2,7 +2,7 @@
 
 Use Breeze to quickly and easily build JSON APIs with PHP.
 
-Requires PHP 5.5 or greater and URL rewriting.
+Requires PHP 5.5 or greater.
 
 - [Install](https://github.com/geogkary/breeze/tree/dev#how-to-install)
 - [Start](https://github.com/geogkary/breeze/tree/dev#how-to-start)
@@ -59,7 +59,15 @@ require 'vendor/geogkary/breeze/engine/composer.php';
 2. Download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
 3. Edit `config.php` located in Breeze's root directory
 
-Make sure you have an .htaccess file in your root directory:
+## How to Configure
+
+View the [docs](https://breezephp.com/docs) for more details.
+
+#### Setting up routing:
+
+Breeze is built on top of Flight, which requires URL rewriting.
+
+Here's a quick .htaccess to copy:
 
 ```
 RewriteEngine On
@@ -68,10 +76,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
 ```
-
-## How to Configure
-
-View the [docs](https://breezephp.com/docs) for more details.
 
 #### Using libraries:
 
