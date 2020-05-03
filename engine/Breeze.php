@@ -78,11 +78,9 @@ class Breeze
                     }
                 }
 
-                if (empty($versions)) {
-                    return self::respond('404');
+                if (!empty($versions)) {
+                    return self::respond($versions);
                 }
-
-                return self::respond($versions);
             }
 
             return self::respond('200');
