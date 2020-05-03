@@ -1,6 +1,6 @@
 # Breeze PHP
 
-Use Breeze to quickly setup and start building JSON APIs with PHP. Breeze is a lightweight framework that takes care of versioning and routing, built on top of mikecao/flight.
+Use Breeze to quickly setup and start building JSON APIs with PHP. Breeze is a lightweight framework that takes care of versioning and routing, built on top of [mikecao/flight](https://github.com/mikecao/flight).
 
 Requires PHP 5.6 or greater.
 
@@ -64,7 +64,7 @@ View the [docs](https://breezephp.com/docs) for more details.
 
 #### Setting up routing:
 
-Breeze is built on top of Flight, which requires URL rewriting. Here's a quick .htaccess to copy:
+Breeze is built on top of [Flight](https://github.com/mikecao/flight), which requires URL rewriting. Here's a quick .htaccess to copy:
 
 ```
 RewriteEngine On
