@@ -22,7 +22,7 @@ class Breeze
         header('Content-Type: application/json');
 
         if ($composer) {
-            define('BZ_DIR', realpath(__DIR__ . '/../..') . '/');
+            define('BZ_DIR', realpath(__DIR__ . '/../..') . '/breeze/');
         } else {
             define('BZ_DIR', '');
         }
@@ -38,7 +38,7 @@ class Breeze
             require_once 'engine/flight/flight/Flight.php';
         }
 
-        if (!file_exists('config.php')) {
+        if (!file_exists(BZ_DIR . 'config.php')) {
             return self::respond(array(
                 'status' => '500',
                 'message' => 'Bad configuration - missing config file'
