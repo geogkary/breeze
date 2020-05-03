@@ -252,7 +252,7 @@ class Breeze
 
         echo json_encode(array(
             'status' => '500',
-            'message' => self::$errors['500']
+            'message' => 'Server - something went wrong'
         ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
         return;
