@@ -7,7 +7,7 @@
 */
 
 // for manual installations
-require '../../engine/endpointer.php';
+// require '../../engine/endpointer.php';
 
 // for composer
-require '../../vendor/geogkary/breeze/engine/endpointer.php';
+// require '../../vendor/geogkary/breeze/engine/endpointer.php';
