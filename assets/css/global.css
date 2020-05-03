@@ -9,7 +9,7 @@
     display: none;
 }
 .pace .pace-progress {
-    background: #9b59b6;
+    background: #23527c;
     position: fixed;
     z-index: 2000;
     top: 0;
@@ -19,10 +19,10 @@
 }
 
 body {
-    background: #343233;
+    background: #fafafa;
     font-size: 18px;
     line-height: 28px;
-    color: #c0bbc1;
+    color: #000;
     overflow-x: hidden;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 200;
@@ -35,7 +35,7 @@ h3,
 h4 {
     font-family: 'Fira Sans', sans-serif;
     font-weight: 200;
-    color: #fff;
+    color: #000;
 }
 h1 {
     font-size: 55px;
@@ -57,27 +57,27 @@ h6 {
 }
 a,
 a:visited {
-    color: #fff;
-    border-bottom: 1px solid #fff;
+    color: #23527c;
+    border-bottom: 1px solid #23527c;
 }
 a:hover {
-    color: #9b59b6;
+    color: #23527c;
     text-decoration: none;
-    border-bottom: 1px solid #9b59b6;
+    border-bottom: 1px solid #23527c;
 }
 .btn-primary {
-    background: #9b59b6;
+    background: #23527c;
     border: none;
     color: #fff !important;
 }
 .btn-primary:hover {
-    background: #9a9a9a;
+    background: #23527c;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .22);
 }
 
 body > header {
     font-size: 16px;
     line-height: 16px;
-    background: linear-gradient(to right,#343233 0%,#2f2d2e 50%,#2f2d2e 100%);
 }
 body > header a,
 body > header a:hover,
@@ -90,20 +90,6 @@ body > header a.logo {
     font-weight: 400;
     font-size: 20px;
     letter-spacing: -0.09em;
-}
-
-body > footer {
-    background: linear-gradient(to right,#343233 0%,#2f2d2e 50%,#2f2d2e 100%);
-}
-
-section.splash {
-    background: linear-gradient(to right,#343233 0%,#2f2d2e 50%,#2f2d2e 100%);
-}
-section.install {
-    background: linear-gradient(to right,#2f2d2e 0%,#2f2d2e 50%,#343233 100%);
-}
-section.contribute {
-    background: linear-gradient(to right,#343233 0%,#2f2d2e 50%,#2f2d2e 100%);
 }
 
 img {
