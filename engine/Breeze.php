@@ -61,7 +61,7 @@ class Breeze
 
         // Home requests
 
-        Flight::route('GET /', function() {
+        Flight::route('/', function() {
             if (!self::$versions || empty(self::$versions)) {
                 return self::respond(array(
                     'status' => '500',
