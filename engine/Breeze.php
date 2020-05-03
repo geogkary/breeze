@@ -105,14 +105,14 @@ class Breeze
 
                 // check version
 
-                if (!isset(self::$versions[$v]) || !file_exists(BZ_DIR . 'versions/' . $v . '/API.php')) {
+                if (!isset(self::$versions[$v]) || !file_exists('versions/' . $v . '/API.php')) {
                     return self::respond(array(
                         'status' => '404',
                         'message' => 'Not found - requested version does not exist'
                     ));
                 }
 
-                require_once BZ_DIR . 'versions/' . $v . '/API.php';
+                require_once 'versions/' . $v . '/API.php';
 
                 // check API configuration
 
@@ -162,7 +162,7 @@ class Breeze
 
                 // check for authorization
 
-                if (isset(API::$keys) && !empty(API::$keys) && !$key || !in_array($key, API::$keys)) {
+                if (isset(API::$keys) && !empty(API::$keys) && (!$key || !in_array($key, API::$keys))) {
                     return self::respond('403');
                 }
 
