@@ -21,6 +21,12 @@ class Breeze
     {
         header('Content-Type: application/json');
 
+        if ($composer) {
+            define('BZ_DIR', realpath(__DIR__ . '/../..') . '/');
+        } else {
+            define('BZ_DIR', '');
+        }
+
         if (!class_exists('Flight')) {
             if (!file_exists('engine/flight/flight/Flight.php')) {
                 return self::respond(array(
@@ -39,7 +45,7 @@ class Breeze
             ));
         }
 
-        require_once 'config.php';
+        require_once BZ_DIR . 'config.php';
 
         self::$versions = isset($bz_versions) ? $bz_versions : null;
         self::$errors = isset($bz_errors) ? $bz_errors : null;
@@ -99,14 +105,14 @@ class Breeze
 
                 // check version
 
-                if (!isset(self::$versions[$v]) || !file_exists('versions/' . $v . '/API.php')) {
+                if (!isset(self::$versions[$v]) || !file_exists(BZ_DIR . 'versions/' . $v . '/API.php')) {
                     return self::respond(array(
                         'status' => '404',
                         'message' => 'Not found - requested version does not exist'
                     ));
                 }
 
-                require_once 'versions/' . $v . '/API.php';
+                require_once BZ_DIR . 'versions/' . $v . '/API.php';
 
                 // check API configuration
 
