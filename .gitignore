@@ -1,4 +1,0 @@
-/index.php
-.htaccess
-engine/flight/*
-!engine/flight/index.php
