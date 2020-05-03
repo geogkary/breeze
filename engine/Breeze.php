@@ -162,7 +162,7 @@ class Breeze
 
                 // check for authorization
 
-                if (isset(API::$keys) && !empty(API::$keys) && !$key || !in_array($key, API::$keys)) {
+                if (isset(API::$keys) && !empty(API::$keys) && (!$key || !in_array($key, API::$keys))) {
                     return self::respond('403');
                 }
 
