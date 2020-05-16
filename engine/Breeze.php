@@ -75,21 +75,7 @@ class Breeze
                 ));
             }
 
-            if (defined('BZ_LIST_ENDPOINTS') && BZ_LIST_ENDPOINTS === true) {
-                $versions = array();
-
-                foreach (self::$versions as $name => $active) {
-                    if ($active) {
-                        $versions[$name] = BZ_ROOT . $name . '/';
-                    }
-                }
-
-                if (!empty($versions)) {
-                    return self::respond($versions);
-                }
-            }
-
-            return self::respond('200');
+            return self::endlist(self::$versions);
         });
 
         // All requests
@@ -169,11 +155,7 @@ class Breeze
                 // check if request is version home
 
                 if (!$endpoint) {
-                    if (defined('BZ_LIST_ENDPOINTS') && BZ_LIST_ENDPOINTS === true) {
-                        return self::respond(API::$endpoints);
-                    }
-
-                    return self::respond('200');
+                    return self::endlist(API::$endpoints);
                 }
 
                 // check if the endpoint exists
@@ -192,11 +174,7 @@ class Breeze
 
                 if (!$call) {
                     if (!method_exists('API', $method)) {
-                        if (defined('BZ_LIST_ENDPOINTS') && BZ_LIST_ENDPOINTS === true) {
-                            return self::respond(API::$endpoints[$endpoint]);
-                        }
-
-                        return self::respond('200');
+                        return self::endlist(API::$endpoints[$endpoint]);
                     }
 
                     return API::{$method}($request);
@@ -260,6 +238,39 @@ class Breeze
         ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
         return;
+    }
+
+    /**
+    * @method
+    */
+
+    private static function endlist($endpoints = array())
+    {
+        $listing = array();
+
+        if (defined('BZ_LIST_ENDPOINTS') && BZ_LIST_ENDPOINTS === true && defined('BZ_ROOT')) {
+            foreach ($endpoints as $name => $path) {
+                if (is_array($path) && !empty($path)) {
+                    if (!isset($listing[$name]) || empty($listing[$name])) {
+                        $listing[$name] = array();
+                    }
+
+                    foreach ($path as $endpoint => $route) {
+                        $listing[$name][$endpoint] = BZ_ROOT . $name . '/';
+                    }
+                } else {
+                    if ($path) {
+                        $listing[$name] = BZ_ROOT . $name . '/';
+                    }
+                }
+            }
+
+            if (!empty($listing)) {
+                return self::respond($listing);
+            }
+        }
+
+        return self::respond('200');
     }
 
 }
