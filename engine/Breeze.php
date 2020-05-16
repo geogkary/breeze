@@ -255,8 +255,8 @@ class Breeze
         }
 
         echo json_encode(array(
-            'status' => '500',
-            'message' => 'Server - something went wrong'
+            'status' => '402',
+            'message' => 'Empty response - failed to deliver based on request parameter(s)'
         ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
         return;
