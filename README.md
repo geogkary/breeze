@@ -92,6 +92,8 @@ Breeze handles your API in a linear manner, making appropriate checks during the
 3. If there's a controller, call `$controller->routeReleases()`
 4. Otherwise call `API::routeInfoReleases()` with the request data
 
+If any of the above actions fail the appropriate checks, Breeze serves an error.
+
 Breeze replaces slashes `-` with an underscore `_` (ex. v1/api-info/ => routeApi_info).
 
 #### Using libraries:
