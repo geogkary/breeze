@@ -87,10 +87,10 @@ If the request is ONLY for an endpoint (ex. v1/info/):
 1. If you have a controller file, call `new Info()` with the request data
 2. Otherwise call `API::routeInfo()`
 
-If the request is for an endpoint call (ex. v1/info/releases/):
+If the request continues for an endpoint call (ex. v1/info/releases/):
 
-1. If there's a controller, call `$controller->routeReleases()`
-2. Otherwise call `API::routeInfoReleases()`
+3. If there's a controller, call `$controller->routeReleases()`
+4. Otherwise call `API::routeInfoReleases()`
 
 Breeze replaces slashes `-` with an underscore `_` (ex. v1/api-info/ => routeApi_info).
 
