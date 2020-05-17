@@ -74,6 +74,15 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
 ```
 
+#### Handling versioning & routing:
+
+Breeze handles your API in a linear manner, making appropriate checks during the request. If your API is configured properly and your version is accessible to the request, Breeze will perform the following actions:
+
+1. Collect POST & GET data accepted by your API
+2. Call the `API::init()` method and pass the data
+3. Check for if your API requires `$keys` and if the request has them
+4. Load your endpoint's controller (ex. `new Info()`).
+
 #### Using libraries:
 
 If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory.
