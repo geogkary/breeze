@@ -85,7 +85,7 @@ Breeze handles your API in a linear manner, making appropriate checks during the
 If the request is ONLY for an endpoint (ex. v1/info/):
 
 1. If you have a controller file, call `new Info()` with the request data
-2. Otherwise call `API::routeInfo()`
+2. Otherwise call `API::routeInfo()` if the request stops there
 
 If the request continues for an endpoint call (ex. v1/info/releases/):
 
