@@ -6,7 +6,7 @@ Requires PHP 5.6 or greater.
 
 - [Install](#how-to-install)
 - [Start](#how-to-start)
-- [Docs](#how-to-configure)
+- [Config](#how-to-configure)
 
 Released under the [MIT License](https://github.com/geogkary/breeze/LICENSE.md).
 
@@ -44,7 +44,7 @@ Require and load the package:
 composer require geogkary/breeze
 ```
 
-```php
+```PHP
 // autoload
 require 'vendor/autoload.php';
 
@@ -80,7 +80,7 @@ If you're not using Composer, you can optionally load more libraries in the `eng
 
 #### Protecting your subdirectories:
 
-Breeze provides the `engine/endpointer.php` file, which serves a generic 404 response to requests. You can optionally require it in index.php files, to protect your API's subdirectories.
+Breeze provides the `endpointer.php` file, which serves a generic 404 response to requests. You can optionally require it in index.php files, to protect your API's subdirectories.
 
 ## Thanks
 
