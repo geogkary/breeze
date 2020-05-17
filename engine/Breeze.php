@@ -178,7 +178,7 @@ class Breeze
 
                 // check if endpoint home
 
-                $controller;
+                $controller = null;
                 $method = 'route' . ucfirst(str_replace('-', '_', $endpoint));
                 $class = ucfirst(str_replace('-', '_', $endpoint));
                 $file = 'versions/' . $v . '/controllers/' . $class . '.php';
