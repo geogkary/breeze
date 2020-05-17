@@ -29,7 +29,7 @@ class Breeze
 
         if (!class_exists('Flight')) {
             if (!file_exists('engine/flight/flight/Flight.php')) {
-                return self::respond(array(
+                self::respond(array(
                     'status' => '500',
                     'message' => 'Bad configuration - Flight framework not detected'
                 ));
@@ -39,7 +39,7 @@ class Breeze
         }
 
         if (!file_exists(BZ_DIR . 'config.php')) {
-            return self::respond(array(
+            self::respond(array(
                 'status' => '500',
                 'message' => 'Bad configuration - missing config file'
             ));
@@ -61,7 +61,7 @@ class Breeze
             ini_set('display_errors', 0);
 
             Flight::map('error', function() {
-                return self::respond('500');
+                self::respond('500');
             });
         }
 
@@ -69,13 +69,13 @@ class Breeze
 
         Flight::route('/', function() {
             if (!self::$versions || empty(self::$versions)) {
-                return self::respond(array(
+                self::respond(array(
                     'status' => '500',
                     'message' => 'Bad configuration - API versions not detected'
                 ));
             }
 
-            return self::endlist(self::$versions);
+            self::endlist(self::$versions);
         });
 
         // All requests
@@ -92,7 +92,7 @@ class Breeze
                 // check version
 
                 if (!isset(self::$versions[$v]) || !file_exists('versions/' . $v . '/API.php')) {
-                    return self::respond(array(
+                    self::respond(array(
                         'status' => '404',
                         'message' => 'Not found - requested version does not exist'
                     ));
@@ -103,7 +103,7 @@ class Breeze
                 // check API configuration
 
                 if (!class_exists('API') || !isset(API::$endpoints) || empty(API::$endpoints)) {
-                    return self::respond(array(
+                    self::respond(array(
                         'status' => '500',
                         'message' => 'Bad configuration - API not configured properly'
                     ));
@@ -148,56 +148,77 @@ class Breeze
 
                 // check for authorization
 
+                if (method_exists('API', 'init')) {
+                    API::init($request);
+                }
+
                 if (isset(API::$keys) && !empty(API::$keys) && (!$key || !in_array($key, API::$keys))) {
-                    return self::respond('403');
+                    self::respond('403');
                 }
 
                 // check if request is version home
 
                 if (!$endpoint) {
-                    return self::endlist(API::$endpoints);
+                    self::endlist(API::$endpoints);
                 }
 
                 // check if the endpoint exists
 
                 if (!isset(API::$endpoints[$endpoint])) {
-                    return self::respond('404');
-                }
-
-                if (method_exists('API', 'init')) {
-                    API::init();
+                    self::respond('404');
                 }
 
                 // check if endpoint home
 
+                $controller;
                 $method = 'route' . ucfirst(str_replace('-', '_', $endpoint));
+                $class = ucfirst(str_replace('-', '_', $endpoint));
+                $file = 'versions/' . $v . '/controllers/' . $class . '.php';
+
+                if (file_exists($file)) {
+                    require_once $file;
+
+                    if (class_exists($class)) {
+                        $controller = new $class($request, $p1, $p2, $p3, $p4);
+                    }
+                }
 
                 if (!$call) {
-                    if (!method_exists('API', $method)) {
-                        return self::endlist(API::$endpoints[$endpoint]);
+                    if (!$controller && method_exists('API', $method)) {
+                        return API::{$method}($request, $p1, $p2, $p3, $p4);
                     }
 
-                    return API::{$method}($request);
+                    self::endlist(API::$endpoints[$endpoint]);
                 }
 
                 // check if the call exists
 
                 if (!isset(API::$endpoints[$endpoint][$call])) {
-                    return self::respond('401');
+                    self::respond('401');
                 }
 
                 // trigger the endpoint call
 
-                $method .= '_' . ucfirst(str_replace('-', '_', $call));
+                $method .= ucfirst(str_replace('-', '_', $call));
 
-                if (!method_exists('API', $method)) {
-                    return self::respond(array(
+                if (!$controller) {
+                    if (!method_exists('API', $method)) {
+                        self::respond('200');
+                    }
+
+                    return API::{$method}($request, $p1, $p2, $p3, $p4);
+                }
+
+                $method = 'route' . ucfirst(str_replace('-', '_', $call));
+
+                if (!method_exists($class, $method)) {
+                    self::respond(array(
                         'status' => '500',
                         'message' => 'Bad configuration - API not configured properly'
                     ));
                 }
 
-                return API::{$method}($request, $p1, $p2, $p3, $p4);
+                return $controller->{$method}();
             }
         );
 
@@ -212,7 +233,7 @@ class Breeze
     {
         if (is_array($data)) {
             if (empty($data)) {
-                return self::respond('402');
+                self::respond('402');
             }
 
             echo json_encode(
@@ -220,7 +241,7 @@ class Breeze
                 JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
             );
 
-            return;
+            exit();
         }
 
         if (isset(self::$errors[$data])) {
@@ -229,7 +250,7 @@ class Breeze
                 'message' => self::$errors[$data]
             ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
-            return;
+            exit();
         }
 
         echo json_encode(array(
@@ -237,7 +258,7 @@ class Breeze
             'message' => 'Empty response - failed to deliver based on request parameter(s)'
         ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
-        return;
+        exit();
     }
 
     /**
@@ -266,11 +287,11 @@ class Breeze
             }
 
             if (!empty($listing)) {
-                return self::respond($listing);
+                self::respond($listing);
             }
         }
 
-        return self::respond('200');
+        self::respond('200');
     }
 
 }
