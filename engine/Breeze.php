@@ -103,6 +103,7 @@ class Breeze
                 }
 
                 require_once 'versions/' . $v . '/API.php';
+                define('API_ROOT', getcwd() . '/versions/' . $v . '/');
 
                 // check API configuration
 
@@ -178,7 +179,7 @@ class Breeze
 
                 // check if endpoint home
 
-                $controller;
+                $controller = null;
                 $method = 'route' . ucfirst(str_replace('-', '_', $endpoint));
                 $class = ucfirst(str_replace('-', '_', $endpoint));
                 $file = 'versions/' . $v . '/controllers/' . $class . '.php';
@@ -280,16 +281,16 @@ class Breeze
         if (defined('BZ_LIST_ENDPOINTS') && BZ_LIST_ENDPOINTS === true && defined('BZ_ROOT')) {
             foreach ($endpoints as $name => $path) {
                 if (is_array($path) && !empty($path)) {
-                    if (!isset($listing[$name]) || empty($listing[$name])) {
+                    if (!isset($listing[$name])) {
                         $listing[$name] = array();
                     }
 
                     foreach ($path as $endpoint => $route) {
-                        $listing[$name][$endpoint] = BZ_ROOT . $name . '/';
+                        $listing[$name][$endpoint] = BZ_ROOT . $route;
                     }
                 } else {
                     if ($path) {
-                        $listing[$name] = BZ_ROOT . $name . '/';
+                        $listing[$name] = is_bool($path) ? BZ_ROOT . $name . '/' : BZ_ROOT . $path;
                     }
                 }
             }
