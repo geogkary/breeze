@@ -41,7 +41,7 @@ Breeze::init();
 Require and load the package:
 
 ```cmd
-composer require geogkary/breeze
+composer require geogkary/breeze v1.0.3-beta
 ```
 
 ```PHP
