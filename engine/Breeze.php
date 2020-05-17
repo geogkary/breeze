@@ -150,13 +150,17 @@ class Breeze
                     $request = null;
                 }
 
-                // check for authorization
-
                 if (method_exists('API', 'init')) {
                     API::init($request);
                 }
 
-                if (isset(API::$keys) && !empty(API::$keys) && (!$key || !in_array($key, API::$keys))) {
+                // check for authorization
+
+                if (
+                    isset(API::$keys) &&
+                    !empty(API::$keys) &&
+                    (!$key || !isset(API::$keys[$key]) || API::$keys[$key] !== Flight::request()->ip)
+                ) {
                     self::respond('403');
                 }
 
