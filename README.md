@@ -6,7 +6,7 @@ Requires PHP 5.6 or greater.
 
 - [Install](#how-to-install)
 - [Start](#how-to-start)
-- [Docs](#how-to-configure)
+- [Config](#how-to-configure)
 
 Released under the [MIT License](https://github.com/geogkary/breeze/LICENSE.md).
 
@@ -31,7 +31,7 @@ git clone https://github.com/mikecao/flight.git
 
 Run Breeze:
 
-```php
+```PHP
 require 'engine/Breeze.php';
 Breeze::init();
 ```
@@ -44,7 +44,7 @@ Require and load the package:
 composer require geogkary/breeze
 ```
 
-```php
+```PHP
 // autoload
 require 'vendor/autoload.php';
 
@@ -74,13 +74,35 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
 ```
 
+#### Handling requests:
+
+Breeze handles your API in a linear manner, making all the appropriate checks. If your API is configured properly and your version is accessible to the request, Breeze will perform the following actions:
+
+1. Collect POST & GET data accepted by your API
+2. Call the `API::init()` method and pass the data
+3. Check a) if your API requires `$keys` and b) if the request provides a matching key
+
+If the request is ONLY for an endpoint group (ex. v1/info/):
+
+1. If you have a controller file, call `new Info()` with the request data
+2. Otherwise call `API::routeInfo()` if the request stops there
+
+If the request continues to an endpoint (ex. v1/info/releases/):
+
+3. If there's a controller, call `$controller->routeReleases()`
+4. Otherwise call `API::routeInfoReleases()` with the request data
+
+If any of the above actions fail the appropriate checks, Breeze responds with the corresponding error status and message (ex. 403 Forbidden, 402 Empty Response, etc).
+
+Breeze replaces slashes `-` with an underscore `_` (ex. v1/api-info/ => routeApi_info).
+
 #### Using libraries:
 
 If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory.
 
 #### Protecting your subdirectories:
 
-Breeze provides the `engine/endpointer.php` file, which serves a generic 404 response to requests. You can optionally require it in index.php files, to protect your API's subdirectories.
+Breeze provides the `endpointer.php` file, which serves a generic 404 response to requests. You can optionally require it in index.php files, to protect your API's subdirectories.
 
 ## Thanks
 
