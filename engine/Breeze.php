@@ -91,7 +91,11 @@ class Breeze
 
                 // check version
 
-                if (!isset(self::$versions[$v]) || !file_exists('versions/' . $v . '/API.php')) {
+                if (
+                    !isset(self::$versions[$v]) ||
+                    (self::$versions[$v] === false && BZ_DEBUG === false) ||
+                    !file_exists('versions/' . $v . '/API.php')
+                ) {
                     self::respond(array(
                         'status' => '404',
                         'message' => 'Not found - requested version does not exist'
