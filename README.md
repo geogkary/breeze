@@ -31,7 +31,7 @@ git clone https://github.com/mikecao/flight.git
 
 Run Breeze:
 
-```php
+```PHP
 require 'engine/Breeze.php';
 Breeze::init();
 ```
