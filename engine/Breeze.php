@@ -103,6 +103,7 @@ class Breeze
                 }
 
                 require_once 'versions/' . $v . '/API.php';
+                define('API_ROOT', getcwd() . '/versions/' . $v . '/');
 
                 // check API configuration
 
