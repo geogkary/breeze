@@ -9,7 +9,9 @@
 class API
 {
 
-    public static $keys = array();
+    public static $keys = array(
+        // 'admin' => '::1'
+    );
 
     public static $data = array();
 
@@ -25,7 +27,7 @@ class API
     * @method
     */
 
-    public static function init()
+    public static function init($request)
     {
 
     }
@@ -34,11 +36,22 @@ class API
     * @method
     */
 
-    public static function routeInfo_Releases($request, $release = null)
-    {
-        if (!$release) return Breeze::respond('401');
+    // public static function routeInfo($request, $p1, $p2, $p3, $p4)
+    // {
+    //     Breeze::respond('200');
+    // }
 
-        return Breeze::respond($request);
-    }
+    /**
+    * @method
+    */
+
+    // public static function routeInfoReleases($request, $p1, $p2, $p3, $p4)
+    // {
+    //     if (!$p1) Breeze::respond('400');
+    //
+    //     Breeze::respond(array(
+    //         'release' => $p1
+    //     ));
+    // }
 
 }
