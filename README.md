@@ -74,7 +74,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
 ```
 
-#### Handling versioning & routing:
+#### Handling routing:
 
 Breeze handles your API in a linear manner, making appropriate checks during the request. If your API is configured properly and your version is accessible to the request, Breeze will perform the following actions:
 
