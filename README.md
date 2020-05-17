@@ -76,7 +76,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 #### Handling requests:
 
-Breeze handles your API in a linear manner, making appropriate checks during the request. If your API is configured properly and your version is accessible to the request, Breeze will perform the following actions:
+Breeze handles your API in a linear manner, making all the appropriate checks. If your API is configured properly and your version is accessible to the request, Breeze will perform the following actions:
 
 1. Collect POST & GET data accepted by your API
 2. Call the `API::init()` method and pass the data
