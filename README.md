@@ -80,8 +80,8 @@ Breeze handles your API in a linear manner, making appropriate checks during the
 
 1. Collect POST & GET data accepted by your API
 2. Call the `API::init()` method and pass the data
-3. Check for if your API requires `$keys` and if the request has them
-4. Load your endpoint's controller (ex. `new Info()`).
+3. Check a) if your API requires `$keys` and b) if the request provides a matching key
+4. Call your endpoint's controller (ex. `new Info()`) OR `API::routeInfo()` if there's no call
 
 #### Using libraries:
 
