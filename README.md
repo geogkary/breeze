@@ -80,7 +80,17 @@ Use `Breeze::respond($data = array(), $code = '200');` to serve your responses.
 
 By default, Breeze offers the following pre-coded responses:
 
+```json
+"200" : "OK",
+"400" : "Bad request - missing required parameter(s)",
+"401" : "Bad request - incorrect parameter(s)",
+"402" : "Empty response - failed to deliver based on request parameter(s)",
+"403" : "Forbidden - unauthorized access",
+"404" : "Not found - incorrect endpoint provided",
+"500" : "Server - something went wrong"
+```
 
+You can edit the messages but make sure you don't remove the codes, otherwise Breeze will fail to deliver an appropriate response (ex. when authorizing).
 
 #### Handling requests:
 
