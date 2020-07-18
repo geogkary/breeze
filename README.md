@@ -74,6 +74,14 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
 ```
 
+#### Serving responses:
+
+Use `Breeze::respond($data = array(), $code = '200');` to serve your responses.
+
+By default, Breeze offers the following pre-coded responses:
+
+
+
 #### Handling requests:
 
 Breeze handles your API in a linear manner, making the necessary checks along the way.
