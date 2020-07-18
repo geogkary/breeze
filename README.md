@@ -90,26 +90,31 @@ By default, Breeze offers the following pre-coded responses:
 "500" : "Server - something went wrong"
 ```
 
-You can edit the messages but make sure you don't remove the codes, otherwise Breeze will fail to deliver an appropriate response (ex. when authorizing).
+You can edit the messages in `config.php`, but make sure you don't remove the codes, otherwise Breeze will fail to deliver an appropriate response (ex. when authorizing).
 
 #### Handling requests:
 
 Breeze handles your API in a linear manner, making the necessary checks along the way.
 
-If your API is configured properly and your version is accessible to the request, Breeze will perform the following actions:
+If your API is configured properly and your version is accessible to the request through `config.php`, Breeze will perform the following actions:
 
-##### 1. Preparing the request
+##### 1. Prepare the request
 
-Breeze collects POST & GET data accepted by your API.
+Breeze will collect POST and GET data accepted by your API through the `API::$data` and `API::$query` arrays in your `API.php` file and attempt to execute `API::init()` so you can perform any custom pre-request actions in there.
 
-1. Collect POST & GET data accepted by your API
-2. Call the `API::init()` method and pass the data
-3. Check a) if your API requires `$keys` and b) if the request provides a matching key
+##### 2. Authorise the request
 
-If the request is ONLY for an endpoint group (ex. v1/info/):
+Breeze will check if your `API::$keys` array is not empty and attempt to a) locate the key in the request POST or GET data and b) match it to the IP you can have configure it for.
 
-1. If you have a controller file, call `new Info()` with the request data
-2. Otherwise call `API::routeInfo()` if the request stops there
+If the authorisation fails, Breeze terminates with 403.
+
+##### 3. Handle the endpoint group
+
+If the request is for an endpoint group (ex. myapi.com/v1/info/), Breeze will attempt to create a `new Info()` by loading your controller `Info.php`.
+
+Otherwise, if the request stops there, attempt to call `API::routeInfo()`.
+
+##### 4. Handle the endpoint call
 
 If the request continues to an endpoint (ex. v1/info/releases/):
 
