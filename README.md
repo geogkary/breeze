@@ -76,7 +76,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 #### Serving responses:
 
-Use `Breeze::respond($data = array(), $code = '200');` to serve your responses.
+Use `Breeze::respond($data = array());` to serve your responses. If your array is not empty, Breeze will default to a 200 response with the data, in nicely-tailored JSON format.
 
 By default, Breeze offers the following pre-coded responses:
 
