@@ -110,9 +110,9 @@ If the authorisation fails, Breeze terminates with 403.
 
 ##### 3. myapi.com & myapi.com/v1/
 
-If the request is for your API's root (ex. myapi.com), Breeze will serve an array with all your publicly available versions as configured in `config.php`.
+If the request is for your API's root, Breeze will serve an array with all your publicly available versions as configured in `config.php`.
 
-Same way goes for for a version's root (ex. myapi.com/v1/).
+A version's root displays your endpoints per group.
 
 If you have disabled public lists in `config.php` Breeze will terminate with 200.
 
