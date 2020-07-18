@@ -98,23 +98,31 @@ Breeze handles your API in a linear manner, making the necessary checks along th
 
 If your API is configured properly and your version is accessible to the request through `config.php`, Breeze will perform the following actions:
 
-##### 1. Prepare the request
+##### 1. Pre-request actions
 
 Breeze will collect POST and GET data accepted by your API through the `API::$data` and `API::$query` arrays and attempt to execute `API::init($request = array())` for your custom actions.
 
-##### 2. Authorise the request
+##### 2. Authorisation
 
 Breeze will check if your `API::$keys` array is not empty and attempt to a) locate the key in the request POST or GET data and b) match it to the IP you assigned it to.
 
 If the authorisation fails, Breeze terminates with 403.
 
-##### 3. Handle the endpoint group
+##### 3. myapi.com & myapi.com/v1/
+
+If the request is for your API's root (ex. myapi.com), Breeze will serve an array with all your publicly available versions as configured in `config.php`.
+
+Same way goes for for a version's root (ex. myapi.com/v1/).
+
+If you have disabled public lists in `config.php` Breeze will terminate with 200.
+
+##### 4. myapi.com/v1/group/
 
 If the request is for an endpoint group (ex. myapi.com/v1/info/), Breeze will attempt to create a `new Info()` by loading your controller `Info.php`.
 
 Otherwise, if the request stops there, attempt to call `API::routeInfo()`.
 
-##### 4. Handle the endpoint call
+##### 4. myapi.com/v1/group/endpoint/
 
 If the request continues to an endpoint (ex. v1/info/releases/):
 
