@@ -100,7 +100,7 @@ If your API is configured properly and your version is accessible to the request
 
 ##### 1. Prepare the request
 
-Breeze will collect POST and GET data accepted by your API through the `API::$data` and `API::$query` arrays and attempt to execute `API::init($request = array())` so you can perform custom pre-request actions.
+Breeze will collect POST and GET data accepted by your API through the `API::$data` and `API::$query` arrays and attempt to execute `API::init($request = array())` for your custom actions.
 
 ##### 2. Authorise the request
 
