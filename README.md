@@ -104,7 +104,7 @@ Breeze will collect POST and GET data accepted by your API through the `API::$da
 
 ##### 2. Authorise the request
 
-Breeze will check if your `API::$keys` array is not empty and attempt to a) locate the key in the request POST or GET data and b) match it to the IP you can have configure it for.
+Breeze will check if your `API::$keys` array is not empty and attempt to a) locate the key in the request POST or GET data and b) match it to the IP you assigned it to.
 
 If the authorisation fails, Breeze terminates with 403.
 
