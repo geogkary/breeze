@@ -60,7 +60,13 @@ require 'vendor/geogkary/breeze/engine/composer.php';
 
 ## How to Use
 
-View the [docs](https://breezephp.com/docs) for more details.
+- [Routing](#setting-up-routing)
+- [Serving responses](#serving-responses)
+- [Handling requests](#handling-requests)
+- [Pre-request actions](#pre-request-actions)
+- [Authorisation](#authorisation)
+- [Using libraries](#using-libraries)
+- [Protecting your subdirectories](#protecting-your-subdirectories)
 
 #### Setting up routing:
 
