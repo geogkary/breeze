@@ -60,7 +60,7 @@ require 'vendor/geogkary/breeze/engine/composer.php';
 
 ## How to Use
 
-- [Routing](#setting-up-routing)
+- [Setting up routing](#setting-up-routing)
 - [Serving responses](#serving-responses)
 - [Handling requests](#handling-requests)
 - [Pre-request actions](#pre-request-actions)
@@ -70,7 +70,7 @@ require 'vendor/geogkary/breeze/engine/composer.php';
 
 #### Setting up routing:
 
-Create an `.htaccess` file in your root directory:
+Breeze requires URL rewrite. Create an `.htaccess` file in your root directory:
 
 ```
 RewriteEngine On
