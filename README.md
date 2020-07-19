@@ -119,6 +119,8 @@ Breeze can handle up to 4 parameters in your endpoints, which it then stores as 
 
 ```
 
+By default, these parameters are always set as `null`.
+
 ##### 1. Pre-request actions
 
 Breeze will collect POST and GET data accepted by your API through the `API::$data` and `API::$query` arrays and attempt to execute `API::init($request = array())` for your custom actions.
