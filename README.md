@@ -106,7 +106,7 @@ Breeze handles your API in a linear manner, making the necessary checks along th
 "example.com/v1/"
 
 // group of endpoints
-// loads new Info($request, $p1, $p2, $p3, $p4) from your controllers
+// attempts to create new Info($request, $p1, $p2, $p3, $p4) from your controllers
 // otherwise calls API::routeInfo() with the same arguments
 "example.com/v1/info/"
 
