@@ -6,7 +6,7 @@ Requires PHP 5.6 or greater.
 
 - [Install](#how-to-install)
 - [Get Started](#how-to-start)
-- [Configuration & Usage](#how-to-configure)
+- [Configuration & Usage](#how-to-use)
 
 Released under the [MIT License](https://github.com/geogkary/breeze/LICENSE.md).
 
@@ -76,7 +76,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 #### Serving responses:
 
-Use `Breeze::respond($response);` to serve your responses. Pass an array/object to the response or a response code as a string (ex "200"). By default, Breeze offers the following pre-coded responses:
+Use `Breeze::respond($response)` to serve your responses. Pass an array/object to the response or a response code as a string (ex "200"). By default, Breeze offers the following pre-coded responses:
 
 ```json
 "200" : "OK",
