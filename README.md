@@ -94,7 +94,30 @@ Edit `config.php` to create additional responses.
 
 Breeze handles your API in a linear manner, making the necessary checks along the way.
 
-If your API is configured properly and your version is accessible to the request through `config.php`, Breeze will perform the following actions:
+```php
+
+// root
+"example.com"
+
+// version root
+"example.com/v1/"
+
+// group of endpoints
+"example.com/v1/info/"
+
+// endpoint
+"example.com/v1/info/releases/"
+
+```
+
+Breeze can handle up to 4 parameters in your endpoints, which it then stores as variables:
+
+```php
+
+// $p1, $p2, $p3, $p4
+"example.com/v1/info/releases/p1/p2/p3/p4/"
+
+```
 
 ##### 1. Pre-request actions
 
