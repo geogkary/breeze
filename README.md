@@ -112,8 +112,8 @@ Breeze handles your API in a linear manner, making the necessary checks along th
 
 // endpoint
 "example.com/v1/info-about/releases/"
-// A. attempt to call the controller's routeReleases() method (with no arguments)
-// B. otherwise call API::routeInfo_aboutReleases($request, $p1, $p2, $p3, $p4)
+// A. attempts to call the controller's routeReleases() method without any arguments passed
+// B. otherwise calls API::routeInfo_aboutReleases($request, $p1, $p2, $p3, $p4)
 
 ```
 
