@@ -64,7 +64,7 @@ View the [docs](https://breezephp.com/docs) for more details.
 
 #### Setting up routing:
 
-Breeze is built on top of [Flight](https://github.com/mikecao/flight), which requires URL rewriting. Here's a quick .htaccess to copy:
+Create an `.htaccess` file in your root directory:
 
 ```
 RewriteEngine On
@@ -76,7 +76,9 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 #### Serving responses:
 
-Use `Breeze::respond($data = array());` to serve your responses. If your array is not empty, Breeze will serve a 200 response with the data, in nicely-tailored JSON format.
+Use `Breeze::respond($response);` to serve your responses.
+
+Pass an array/object to the response or a status message as a string.
 
 By default, Breeze offers the following pre-coded responses:
 
@@ -90,7 +92,7 @@ By default, Breeze offers the following pre-coded responses:
 "500" : "Server - something went wrong"
 ```
 
-You can edit the messages in `config.php`, but make sure you don't remove the codes, otherwise Breeze will fail to deliver an appropriate response (ex. when authorizing).
+Edit `config.php` to create additional responses.
 
 #### Handling requests:
 
