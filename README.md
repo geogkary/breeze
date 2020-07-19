@@ -115,7 +115,7 @@ Breeze handles your API in a linear manner, making the necessary checks along th
 "example.com/v1/info-about/"
 // A. attempts to create a new Info_about($request, $p1, $p2, $p3, $p4) from your controllers
 // B. otherwise calls API::routeInfo_about() with the same arguments, ONLY if the request does not continue to a specific endpoint below
-// C. otherwise displays the group's endpoints if the options is enabled on config.php
+// C. otherwise displays the group's endpoints if the option is enabled on config.php
 
 // endpoint
 "example.com/v1/info-about/releases/"
