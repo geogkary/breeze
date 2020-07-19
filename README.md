@@ -102,7 +102,7 @@ Breeze handles your API in a linear manner, making the necessary checks along th
 
 // version root
 "example.com/v1/"
-// returns a list of endpoints per group if enabled
+// returns a list of endpoints per group if option is enabled on config.php
 // otherwise returns '200'
 
 // group of endpoints
