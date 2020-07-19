@@ -5,8 +5,8 @@ Use Breeze to quickly setup and start building JSON APIs with PHP. Breeze is a l
 Requires PHP 5.6 or greater.
 
 - [Install](#how-to-install)
-- [Start](#how-to-start)
-- [Config](#how-to-configure)
+- [Get Started](#how-to-start)
+- [Configuration & Usage](#how-to-use)
 
 Released under the [MIT License](https://github.com/geogkary/breeze/LICENSE.md).
 
@@ -41,7 +41,7 @@ Breeze::init();
 Require and load the package:
 
 ```cmd
-composer require geogkary/breeze
+composer require geogkary/breeze v1.0.4-beta
 ```
 
 ```PHP
@@ -58,13 +58,19 @@ require 'vendor/geogkary/breeze/engine/composer.php';
 2. Download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
 3. Edit `config.php` located in Breeze's root directory
 
-## How to Configure
+## How to Use
 
-View the [docs](https://breezephp.com/docs) for more details.
+- [Setting up routing](#setting-up-routing)
+- [Serving responses](#serving-responses)
+- [Handling requests](#handling-requests)
+- [Pre-request actions](#pre-request-actions)
+- [Authorisation](#authorisation)
+- [Using libraries](#using-libraries)
+- [Protecting your subdirectories](#protecting-your-subdirectories)
 
 #### Setting up routing:
 
-Breeze is built on top of [Flight](https://github.com/mikecao/flight), which requires URL rewriting. Here's a quick .htaccess to copy:
+Breeze requires URL rewrite. Create an `.htaccess` file in your root directory:
 
 ```
 RewriteEngine On
@@ -74,33 +80,80 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
 ```
 
-#### Handling requests:
+#### Serving responses
 
-Breeze handles your API in a linear manner, making all the appropriate checks. If your API is configured properly and your version is accessible to the request, Breeze will perform the following actions:
+Use `Breeze::respond($response)` to serve your responses. Pass an array/object to the response or a response code as a string (ex "200"). By default, Breeze offers the following pre-coded responses:
 
-1. Collect POST & GET data accepted by your API
-2. Call the `API::init()` method and pass the data
-3. Check a) if your API requires `$keys` and b) if the request provides a matching key
+```json
+"200" : "OK",
+"400" : "Bad request - missing required parameter(s)",
+"401" : "Bad request - incorrect parameter(s)",
+"402" : "Empty response - failed to deliver based on request parameter(s)",
+"403" : "Forbidden - unauthorized access",
+"404" : "Not found - incorrect endpoint provided",
+"500" : "Server - something went wrong"
+```
 
-If the request is ONLY for an endpoint group (ex. v1/info/):
+Edit `config.php` to create additional responses.
 
-1. If you have a controller file, call `new Info()` with the request data
-2. Otherwise call `API::routeInfo()` if the request stops there
+#### Handling requests
 
-If the request continues to an endpoint (ex. v1/info/releases/):
+Breeze handles your API in a linear manner, making the necessary checks along the way.
 
-3. If there's a controller, call `$controller->routeReleases()`
-4. Otherwise call `API::routeInfoReleases()` with the request data
+```php
 
-If any of the above actions fail the appropriate checks, Breeze responds with the corresponding error status and message (ex. 403 Forbidden, 402 Empty Response, etc).
+// root
+"example.com"
+// returns a list of your publicly available versions
 
-Breeze replaces slashes `-` with an underscore `_` (ex. v1/api-info/ => routeApi_info).
+// version root
+"example.com/v1/"
+// returns a list of endpoints per group if the option is enabled on config.php
+// otherwise returns '200'
 
-#### Using libraries:
+// group of endpoints
+"example.com/v1/info-about/"
+// A. attempts to create a new Info_about($request, $p1, $p2, $p3, $p4) from your controllers
+// B. otherwise calls API::routeInfo_about() with the same arguments, ONLY if the request does not continue to a specific endpoint below
+// C. otherwise displays the group's endpoints if the option is enabled on config.php
+
+// endpoint
+"example.com/v1/info-about/releases/"
+// A. attempts to call the controller's routeReleases() method without any arguments passed
+// B. otherwise calls API::routeInfo_aboutReleases($request, $p1, $p2, $p3, $p4)
+
+```
+
+Note how the dash `-` is replaced with an underscore `_`.
+
+Breeze can handle up to 4 parameters in your endpoints, which it then stores as variables:
+
+```php
+
+// $p1, $p2, $p3, $p4
+"example.com/v1/info/releases/p1/p2/p3/p4/"
+
+```
+
+By default, these parameters are always set as `null`.
+
+#### Pre-request actions
+
+Breeze will collect POST and GET data accepted by your API through the `API::$data` and `API::$query` arrays and attempt to execute `API::init($request)` for your custom pre-request actions.
+
+The `$request` is set to `null` if there are no POST/GET data provided and/or accepted.
+
+#### Authorisation
+
+Breeze will check if your `API::$keys` array is not empty and attempt to a) locate the key in the request POST or GET data and b) match it to the IP you assigned it to.
+
+If the authorisation fails, Breeze terminates with 403.
+
+#### Using libraries
 
 If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory.
 
-#### Protecting your subdirectories:
+#### Protecting your subdirectories
 
 Breeze provides the `endpointer.php` file, which serves a generic 404 response to requests. You can optionally require it in index.php files, to protect your API's subdirectories.
 
@@ -112,5 +165,3 @@ Breeze provides the `endpointer.php` file, which serves a generic 404 response t
 - [Angel Lai](https://github.com/catfan) for the Medoo framework
 - [Dongsheng Cai](https://github.com/dcai) for the curl library
 - [Kaldi](https://en.wikipedia.org/wiki/Coffee) (or the goats?) for discovering coffee
-
-Create static websites with the [Webmart](https://github.com/geogkary/webmart) framework for PHP.
