@@ -74,7 +74,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
 ```
 
-#### Serving responses:
+#### Serving responses
 
 Use `Breeze::respond($response)` to serve your responses. Pass an array/object to the response or a response code as a string (ex "200"). By default, Breeze offers the following pre-coded responses:
 
@@ -90,29 +90,30 @@ Use `Breeze::respond($response)` to serve your responses. Pass an array/object t
 
 Edit `config.php` to create additional responses.
 
-#### Handling requests:
+#### Handling requests
 
 Breeze handles your API in a linear manner, making the necessary checks along the way.
 
 ```php
 
 // root
-// returns a list of your publicly available versions
 "example.com"
+// returns a list of your publicly available versions
 
 // version root
+"example.com/v1/"
 // returns a list of endpoints per group if enabled
 // otherwise returns '200'
-"example.com/v1/"
 
 // group of endpoints
-// attempts to create new Info($request, $p1, $p2, $p3, $p4) from your controllers
-// otherwise calls API::routeInfo() with the same arguments
 "example.com/v1/info/"
+// A. attempts to create new Info($request, $p1, $p2, $p3, $p4) from your controllers
+// B. otherwise calls API::routeInfo() with the same arguments
 
 // endpoint
-//
 "example.com/v1/info/releases/"
+// A. attempt to call the controller's routeReleases() method (with no arguments)
+// B. otherwise call API::routeInfoReleases($request, $p1, $p2, $p3, $p4)
 
 ```
 
@@ -139,36 +140,11 @@ Breeze will check if your `API::$keys` array is not empty and attempt to a) loca
 
 If the authorisation fails, Breeze terminates with 403.
 
-##### 3. example.com & example.com/v1/
-
-If the request is for your API's root, Breeze will serve an array with all your publicly available versions as configured in `config.php`.
-
-A version's root displays your endpoints per group.
-
-If you have disabled public lists in `config.php` Breeze will terminate with 200.
-
-##### 4. example.com/v1/group/
-
-If the request is for an endpoint group (ex. myapi.com/v1/info/), Breeze will attempt to create a `new Info()` by loading your controller `Info.php`.
-
-Otherwise, if the request stops there, attempt to call `API::routeInfo()`.
-
-##### 4. example.com/v1/group/endpoint/
-
-If the request continues to an endpoint (ex. v1/info/releases/):
-
-3. If there's a controller, call `$controller->routeReleases()`
-4. Otherwise call `API::routeInfoReleases()` with the request data
-
-If any of the above actions fail the appropriate checks, Breeze responds with the corresponding error status and message (ex. 403 Forbidden, 402 Empty Response, etc).
-
-Breeze replaces slashes `-` with an underscore `_` (ex. v1/api-info/ => routeApi_info).
-
-#### Using libraries:
+#### Using libraries
 
 If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory.
 
-#### Protecting your subdirectories:
+#### Protecting your subdirectories
 
 Breeze provides the `endpointer.php` file, which serves a generic 404 response to requests. You can optionally require it in index.php files, to protect your API's subdirectories.
 
