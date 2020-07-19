@@ -165,5 +165,3 @@ Breeze provides the `endpointer.php` file, which serves a generic 404 response t
 - [Angel Lai](https://github.com/catfan) for the Medoo framework
 - [Dongsheng Cai](https://github.com/dcai) for the curl library
 - [Kaldi](https://en.wikipedia.org/wiki/Coffee) (or the goats?) for discovering coffee
-
-Create static websites with the [Webmart](https://github.com/geogkary/webmart) framework for PHP.
