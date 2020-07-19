@@ -130,7 +130,7 @@ By default, these parameters are always set as `null`.
 
 #### Pre-request actions
 
-Breeze will collect POST and GET data accepted by your API through the `API::$data` and `API::$query` arrays and attempt to execute `API::init($request)` for your custom actions.
+Breeze will collect POST and GET data accepted by your API through the `API::$data` and `API::$query` arrays and attempt to execute `API::init($request)` for your custom pre-request actions.
 
 The `$request` is set to `null` if there are no POST/GET data provided and/or accepted.
 
