@@ -5,8 +5,8 @@ Use Breeze to quickly setup and start building JSON APIs with PHP. Breeze is a l
 Requires PHP 5.6 or greater.
 
 - [Install](#how-to-install)
-- [Start](#how-to-start)
-- [Config](#how-to-configure)
+- [Get Started](#how-to-start)
+- [Configuration & Usage](#how-to-configure)
 
 Released under the [MIT License](https://github.com/geogkary/breeze/LICENSE.md).
 
@@ -58,7 +58,7 @@ require 'vendor/geogkary/breeze/engine/composer.php';
 2. Download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip) to get started quickly
 3. Edit `config.php` located in Breeze's root directory
 
-## How to Configure
+## How to Use
 
 View the [docs](https://breezephp.com/docs) for more details.
 
