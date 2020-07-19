@@ -97,15 +97,21 @@ Breeze handles your API in a linear manner, making the necessary checks along th
 ```php
 
 // root
+// returns a list of your publicly available versions
 "example.com"
 
 // version root
+// returns a list of endpoints per group if enabled
+// otherwise returns '200'
 "example.com/v1/"
 
 // group of endpoints
+// loads new Info($request, $p1, $p2, $p3, $p4) from your controllers
+// otherwise calls API::routeInfo() with the same arguments
 "example.com/v1/info/"
 
 // endpoint
+//
 "example.com/v1/info/releases/"
 
 ```
@@ -121,13 +127,13 @@ Breeze can handle up to 4 parameters in your endpoints, which it then stores as 
 
 By default, these parameters are always set as `null`.
 
-##### 1. Pre-request actions
+#### Pre-request actions
 
 Breeze will collect POST and GET data accepted by your API through the `API::$data` and `API::$query` arrays and attempt to execute `API::init($request)` for your custom actions.
 
 The `$request` is set to `null` if there are no POST/GET data provided and/or accepted.
 
-##### 2. Authorisation
+#### Authorisation
 
 Breeze will check if your `API::$keys` array is not empty and attempt to a) locate the key in the request POST or GET data and b) match it to the IP you assigned it to.
 
