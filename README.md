@@ -117,7 +117,7 @@ Breeze handles your API in a linear manner, making the necessary checks along th
 
 ```
 
-Note how Breeze replaces the dash `-` with an underscore `_`.
+Note how the dash `-` is replaced with an underscore `_`.
 
 Breeze can handle up to 4 parameters in your endpoints, which it then stores as variables:
 
