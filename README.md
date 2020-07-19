@@ -106,16 +106,18 @@ Breeze handles your API in a linear manner, making the necessary checks along th
 // otherwise returns '200'
 
 // group of endpoints
-"example.com/v1/info/"
-// A. attempts to create new Info($request, $p1, $p2, $p3, $p4) from your controllers
-// B. otherwise calls API::routeInfo() with the same arguments
+"example.com/v1/info-about/"
+// A. attempts to create new Info_about($request, $p1, $p2, $p3, $p4) from your controllers
+// B. otherwise calls API::routeInfo_about() with the same arguments
 
 // endpoint
-"example.com/v1/info/releases/"
+"example.com/v1/info-about/releases/"
 // A. attempt to call the controller's routeReleases() method (with no arguments)
-// B. otherwise call API::routeInfoReleases($request, $p1, $p2, $p3, $p4)
+// B. otherwise call API::routeInfo_aboutReleases($request, $p1, $p2, $p3, $p4)
 
 ```
+
+Note how Breeze replaces the dash `-` with an underscore `_`.
 
 Breeze can handle up to 4 parameters in your endpoints, which it then stores as variables:
 
