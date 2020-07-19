@@ -78,7 +78,7 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 Use `Breeze::respond($response);` to serve your responses.
 
-Pass an array/object to the response or a status message as a string.
+Pass an array/object to the response or a response code as a string (ex "200").
 
 By default, Breeze offers the following pre-coded responses:
 
