@@ -56,13 +56,11 @@ require 'vendor/geogkary/breeze/engine/composer.php';
 
 First things first, create a subidrectory `versions/` inside your project's root directory.
 
-You can download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip), so you don't have to start from scratch. Just unzip inside the subdirectory.
-
-Edit `config.php` located in Breeze's root directory.
+You can download the [boilerplate API version](https://github.com/geogkary/breeze/archive/boilerplate.zip), so you don't have to start from scratch. Just unzip inside the subdirectory. Edit `config.php` located in Breeze's root directory.
 
 That's it.
 
-(PS: [Undestand Breeze in 5 minutes](https://github.com/geogkary/breeze/blob/master/DOCS.md))
+(PS: [Undestand how to use Breeze in 5 minutes](https://github.com/geogkary/breeze/blob/master/DOCS.md))
 
 ## Thanks
 
