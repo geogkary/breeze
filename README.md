@@ -65,7 +65,7 @@ That's it.
 ## Thanks
 
 - [Mike Cao](https://github.com/mikecao) for the Flight framework
-- [GitHub API](https://developer.github.com/v3/) for the immense inspiration on structuring RESTful APIs
+- [GitHub API](https://docs.github.com/en/rest) for the immense inspiration on structuring RESTful APIs
 - [Valandis Zotos](https://github.com/BalzoT) for his invaluable feedback and help
 - [Angel Lai](https://github.com/catfan) for the Medoo framework
 - [Dongsheng Cai](https://github.com/dcai) for the curl library
