@@ -1,6 +1,6 @@
 # Breeze PHP - Docs
 
-## How to Use
+Understand how to use Breeze in 5 minutes.
 
 - [Setting up routing](#setting-up-routing)
 - [Serving responses](#serving-responses)
@@ -10,7 +10,7 @@
 - [Using libraries](#using-libraries)
 - [Protecting your subdirectories](#protecting-your-subdirectories)
 
-#### Setting up routing:
+### Setting up routing:
 
 Breeze requires URL rewrite. Create an `.htaccess` file in your root directory:
 
@@ -22,7 +22,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
 ```
 
-#### Serving responses
+### Serving responses
 
 Use `Breeze::respond($response)` to serve your responses. Pass an array/object to the response or a response code as a string (ex "200"). By default, Breeze offers the following pre-coded responses:
 
@@ -38,7 +38,7 @@ Use `Breeze::respond($response)` to serve your responses. Pass an array/object t
 
 Edit `config.php` to create additional responses.
 
-#### Handling requests
+### Handling requests
 
 Breeze handles your API in a linear manner, making the necessary checks along the way.
 
@@ -79,22 +79,22 @@ Breeze can handle up to 4 parameters in your endpoints, which it then stores as 
 
 By default, these parameters are always set as `null`.
 
-#### Pre-request actions
+### Pre-request actions
 
 Breeze will collect POST and GET data accepted by your API through the `API::$data` and `API::$query` arrays and attempt to execute `API::init($request)` for your custom pre-request actions.
 
 The `$request` is set to `null` if there are no POST/GET data provided and/or accepted.
 
-#### Authorisation
+### Authorisation
 
 Breeze will check if your `API::$keys` array is not empty and attempt to a) locate the key in the request POST or GET data and b) match it to the IP you assigned it to.
 
 If the authorisation fails, Breeze terminates with 403.
 
-#### Using libraries
+### Using libraries
 
 If you're not using Composer, you can optionally load more libraries in the `engine/libraries/` directory.
 
-#### Protecting your subdirectories
+### Protecting your subdirectories
 
 Breeze provides the `endpointer.php` file, which serves a generic 404 response to requests. You can optionally require it in index.php files, to protect your API's subdirectories.
